@@ -1,0 +1,8 @@
+require './validation.rb'
+require 'yaml'
+require 'date'
+require 'pry'
+require './entities/reader.rb'
+require './entities/book.rb'
+require './entities/order.rb'
+require './entities/author.rb'

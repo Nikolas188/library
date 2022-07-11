@@ -18,6 +18,6 @@ class Reader
     validate_string(@email, 'email')
     validate_string(@street, 'street')
     validate_number(@house, 'house')
-    validate_positive(@house, 'hause')
+    validate_positive(@house, 'house')
   end
 end

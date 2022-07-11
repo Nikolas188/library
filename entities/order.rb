@@ -4,13 +4,13 @@ class Order
   def initialize(book, reader, date)
     @book = book
     @reader = reader
-    @date = date
+    @date = Date.parse(date)
     validate
   end
 
   private
 
-  def validate
+  def validate!
     validate_string(@book, 'book')
     validate_string(@reader, 'reader')
   end

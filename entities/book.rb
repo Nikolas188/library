@@ -10,6 +10,7 @@ class Book
   private
 
   def validate
-    validate_string(@title, 'title')
-    validate_string(@autor, 'autor')
+    validate_class!(@title, String, 'title')
+    validate_class(@author, Author, 'author')
+  end
 end

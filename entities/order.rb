@@ -1,4 +1,6 @@
 class Order
+  include Validation
+
   attr_reader :book, :reader, :date
 
   def initialize(book, reader, date)
@@ -11,7 +13,7 @@ class Order
   private
 
   def validate!
-    validate_string(@book, 'book')
-    validate_string(@reader, 'reader')
+    validate_string(@book, Book, 'book')
+    validate_string(@reader, Reader, 'reader')
   end
 end

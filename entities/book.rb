@@ -1,4 +1,6 @@
 class Book
+  include Validation
+
   attr_reader :title, :author
 
   def initialize(title, author)
@@ -10,7 +12,7 @@ class Book
   private
 
   def validate
-    validate_class!(@title, String, 'title')
+    validate_string(@title, 'title')
     validate_class(@author, Author, 'author')
   end
 end

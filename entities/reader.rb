@@ -1,4 +1,6 @@
 class Reader
+  include Validation
+
   attr_reader :name, :email, :street, :house
 
   def initialize(name, email, city, street, house)

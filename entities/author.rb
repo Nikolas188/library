@@ -1,4 +1,6 @@
 class Author
+  include Validation
+
   attr_reader :name, :biography
 
   def initialize(name, biography = "")
@@ -9,8 +11,6 @@ class Author
 
   def validate
     validate_string(@name, 'name')
-    validate_integer(@name, 'name')
-    validate_not_empty(@name, 'name')
     validate_string(@biography, 'biography')
   end
 end

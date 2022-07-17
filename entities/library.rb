@@ -1,4 +1,15 @@
-class library
+class Library
+  include Storage
+
+  attr_reader :author, :book, :reader, :order
+
+  def initialize
+    @author = []
+    @book = []
+    @reader = []
+    @order = []
+  end
+
   def add(object)
     case object
     when Author

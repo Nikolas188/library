@@ -7,13 +7,13 @@ class Order
     @book = book
     @reader = reader
     @date = Date.parse(date)
-    validate
+    validate!
   end
 
   private
 
   def validate!
-    validate_string(@book, Book, 'book')
-    validate_string(@reader, Reader, 'reader')
+    validate_class(@book, Book, 'book')
+    validate_class(@reader, Reader, 'reader')
   end
 end

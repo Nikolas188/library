@@ -6,12 +6,12 @@ class Book
   def initialize(title, author)
     @title = title
     @author = author
-    validate
+    validate!
   end
 
   private
 
-  def validate
+  def validate!
     validate_string(@title, 'title')
     validate_class(@author, Author, 'author')
   end

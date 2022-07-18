@@ -1,13 +1,13 @@
 class Library
   include Storage
 
-  attr_reader :author, :book, :reader, :order
+  attr_reader :authors, :books, :readers, :orders
 
   def initialize
-    @author = []
-    @book = []
-    @reader = []
-    @order = []
+    @authors = []
+    @books = []
+    @readers = []
+    @orders = []
   end
 
   def add(object)
@@ -24,9 +24,9 @@ class Library
   end
 
   def save
-    save_to_yaml(@autors)
+    save_to_yaml(@authors)
     save_to_yaml(@books)
-    save_toy_aml(@readers)
+    save_to_yaml(@readers)
     save_to_yaml(@orders)
   end
 end

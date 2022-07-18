@@ -6,10 +6,10 @@ class Author
   def initialize(name, biography = "")
     @name = name
     @biography = biography
-    validate
+    validate!
   end
 
-  def validate
+  def validate!
     validate_string(@name, 'name')
     validate_string(@biography, 'biography')
   end

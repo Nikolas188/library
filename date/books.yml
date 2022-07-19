@@ -1,6 +1,0 @@
----
-- !ruby/object:Book
-  title: Ruby
-  author: !ruby/object:Author
-    name: John Doe
-    biography: ''

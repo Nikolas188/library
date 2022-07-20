@@ -1,0 +1,4 @@
+---
+- !ruby/object:Author
+  name: John Doe
+  biography: ''

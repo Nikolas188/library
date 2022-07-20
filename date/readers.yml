@@ -1,0 +1,7 @@
+---
+- !ruby/object:Reader
+  name: Kek
+  email: email.com
+  street: street
+  city: city
+  house: 4

@@ -1,0 +1,14 @@
+---
+- !ruby/object:Order
+  book: !ruby/object:Book
+    title: Ruby
+    author: !ruby/object:Author
+      name: John Doe
+      biography: ''
+  reader: !ruby/object:Reader
+    name: Kek
+    email: email.com
+    street: street
+    city: city
+    house: 4
+  date: 2022-06-22

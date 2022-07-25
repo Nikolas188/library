@@ -4,10 +4,10 @@ class Library
   attr_reader :authors, :books, :readers, :orders
 
   def initialize
-    @authors = []
-    @books = []
-    @readers = []
-    @orders = []
+    @authors = load('authors')
+    @books = load('books')
+    @readers = load('readers')
+    @orders = load('orders')
   end
 
   def add(object)
@@ -15,7 +15,7 @@ class Library
     when Author
       @authors << object
     when Book
-      books << object
+      @books << object
     when Reader
       @readers << object
     when Order

@@ -30,16 +30,15 @@ class Library
     save_to_yaml(@orders)
   end
 
-  def the_best_reader(orders, popular_readers = 1)
-    group_by(orders, :reader, popular_readers)
+  def most_popular_book(amount = 1)
+    orders.group_by { |order| order.book.title }.transform_values { |value| value.size }.sort_by { |k, v| v }.reverse.to_h.keys.first(amount)
   end
 
-  def most_popular_book(orders, popular_book_count = 3)
-    group_by(orders, :book, popular_book_count)
+  def the_best_reader(amount = 1)
+    orders.group_by { |order| order.reader.name }.transform_values {|value| value.size }.sort_by { |k, v| v }.reverse.to_h.keys.first(amount)
   end
 
-  def readers_three_most_popular_books(orders, popular_book_count = 3)
-    popular_orders = group_by(orders, :book).take(popular_book_count).map { |book_orders| book_orders[1] }
-    popular_orders.flatten.map(&:reader).uniq.size
+  def reader_most_popular_book(amaunt = 3)
+    orders.uniq { |order| order.reader.email }
   end
 end

@@ -5,7 +5,7 @@ module Storage
   end
 
   def load(collection)
-    Psych.safe_load(File.read("./data/#{collection}.yml"), permitted_classes: [Author, Date, Book, Reader, Order])
+    Psych.load_file("./data/#{collection}.yml")
   rescue Errno::ENOENT
     File.write("./data/#{collection}.yml", [].to_yaml)
     retry

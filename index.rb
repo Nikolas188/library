@@ -16,9 +16,10 @@ reader2 = Reader.new("Jack", "dog.com", "Dnieper", "Victory", 2)
 reader3 = Reader.new("Lol", "cat.com", "Dnieper", "Peace", 1)
 
 order = Order.new(book, reader, '22.06.2022')
-order1 = Order.new(book1, reader1, '24.06.2022')
-order2 = Order.new(book2, reader1, '25.06.2022')
-order3 = Order.new(book3, reader1, '26.06.2022')
+order1 = Order.new(book1, reader, '24.06.2022')
+order2 = Order.new(book2, reader, '25.06.2022')
+order3 = Order.new(book, reader1, '26.06.2022')
+order4 = Order.new(book, reader2, '26.06.2022')
 
 library = Library.new
 library.add(author)
@@ -36,9 +37,12 @@ library.add(reader3)
 library.add(order)
 library.add(order1)
 library.add(order2)
-library.add(order3)
+library.add(order4)
 library.save
 
 puts library.orders.first.book.title
 puts library.orders.first.book.author.name
 puts library.orders.first.reader.name
+puts library.most_popular_book
+puts library.the_best_reader
+puts library.reader_most_popular_book

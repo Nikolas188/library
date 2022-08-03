@@ -45,4 +45,4 @@ puts library.orders.first.book.author.name
 puts library.orders.first.reader.name
 puts library.most_popular_book
 puts library.the_best_reader
-puts library.reader_most_popular_book
+puts library.number_of_readers_of_most_popular_books

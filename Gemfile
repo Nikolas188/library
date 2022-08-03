@@ -8,4 +8,6 @@ gem "pry"
 
 gem "psych"
 
-gem 'rubocop'
+gem 'rubocop',
+
+gem "unicode-display_width", "1.3.3"

@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 require './autoload'
 
-author = Author.new("John Doe")
-author1 = Author.new("Stephen King")
-author2 = Author.new("Dan Brown")
-author3 = Author.new("Ray Bradbury")
+author = Author.new('John Doe')
+author1 = Author.new('Stephen King')
+author2 = Author.new('Dan Brown')
+author3 = Author.new('Ray Bradbury')
 
-book = Book.new("Ruby", author)
-book1 = Book.new("The Shining", author1)
-book2 = Book.new("Deception Point", author2)
-book3 = Book.new("451 Pharyngate", author3)
+book = Book.new('Ruby', author)
+book1 = Book.new('The Shining', author1)
+book2 = Book.new('Deception Point', author2)
+book3 = Book.new('451 Pharyngate', author3)
 
-reader = Reader.new("Kek", "email.com", "city", "street", 4)
-reader1 = Reader.new("Bob", "cool.com", "Dnieper", "Shevchenko", 3)
-reader2 = Reader.new("Jack", "dog.com", "Dnieper", "Victory", 2)
-reader3 = Reader.new("Lol", "cat.com", "Dnieper", "Peace", 1)
+reader = Reader.new('Kek', 'email.com', 'city', 'street', 4)
+reader1 = Reader.new('Bob', 'cool.com', 'Dnieper', 'Shevchenko', 3)
+reader2 = Reader.new('Jack', 'dog.com', 'Dnieper', 'Victory', 2)
+reader3 = Reader.new('Lol', 'cat.com', 'Dnieper', 'Peace', 1)
 
 order = Order.new(book, reader, '22.06.2022')
 order1 = Order.new(book1, reader, '24.06.2022')

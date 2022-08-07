@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Library
   include Storage
 
@@ -31,18 +33,18 @@ class Library
   end
 
   def most_popular_book(amount = 1)
-    orders.group_by { |order| order.book.title }.transform_values { |value| value.size }.sort_by {
-       |k, v| v }.reverse.to_h.keys.first(amount)
+    orders.group_by { |order| order.book.title }.transform_values(&:size).sort_by do |_k, v|
+      v end.reverse.to_h.keys.first(amount)
   end
 
   def the_best_reader(amount = 1)
-    orders.group_by { |order| order.reader.name }.transform_values {
-       |value| value.size }.sort_by { |k, v| v }.reverse.to_h.keys.first(amount)
+    orders.group_by do |order|
+ order.reader.name end.transform_values(&:size).sort_by { |_k, v| v }.reverse.to_h.keys.first(amount)
   end
 
   def number_of_readers_of_most_popular_books(amount = 3)
     popular_books = most_popular_book(amount)
-    orders.select { |order| popular_books.include?(order.book.title) }.map {
-       |order| order.reader.email }.uniq.count
+    orders.select { |order| popular_books.include?(order.book.title) }.map do |order|
+      order.reader.email end.uniq.count
   end
 end
